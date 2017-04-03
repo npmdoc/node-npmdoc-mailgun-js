@@ -1,0 +1,924 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/bojand/mailgun-js"
+
+    >mailgun-js (v0.9.1)</a>
+</h1>
+<h4>Simple Node.js helper module for Mailgun API</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js">module mailgun-js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.attachment">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>attachment
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>request
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mailgun-js.</span>attachment.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mailgun-js.</span>request.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js.attachment">module mailgun-js.attachment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.attachment.attachment">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>attachment
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js.attachment.prototype">module mailgun-js.attachment.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.attachment.prototype.getType">
+            function <span class="apidocSignatureSpan">mailgun-js.attachment.prototype.</span>getType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js.request">module mailgun-js.request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.request">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>request
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js.request.prototype">module mailgun-js.request.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype._request">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>_request
+            <span class="apidocSignatureSpan">(method, resource, data, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.handleAttachmentObject">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>handleAttachmentObject
+            <span class="apidocSignatureSpan">(key, obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.handleMimeObject">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>handleMimeObject
+            <span class="apidocSignatureSpan">(key, obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.handleResponse">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>handleResponse
+            <span class="apidocSignatureSpan">(res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.performRequest">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>performRequest
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.prepareData">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>prepareData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.prepareFormData">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>prepareFormData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request.prototype.request">
+            function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>request
+            <span class="apidocSignatureSpan">(method, resource, data, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailgun-js" id="apidoc.module.mailgun-js">module mailgun-js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.attachment" id="apidoc.element.mailgun-js.attachment">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>attachment
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Attachment(options) {
+  var data = options.data;
+
+  if (data) {
+    if (typeof data === &#x27;string&#x27; || Buffer.isBuffer(data) || isStream(data)) {
+      this.data = data;
+    }
+  }
+
+  this.filename = options.filename;
+  this.contentType = options.contentType;
+  this.knownLength = options.knownLength;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request" id="apidoc.element.mailgun-js.request">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>request
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Request(options) {
+  this.host = options.host;
+  this.protocol = options.protocol;
+  this.port = options.port;
+  this.endpoint = options.endpoint;
+  this.auth = options.auth;
+  this.proxy = options.proxy;
+  this.timeout = options.timeout;
+  this.retry = options.retry || 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return self.handleResponse(res);
+});
+  }
+  else {
+var req;
+
+if (options.protocol === &#x27;http:&#x27;) {
+  req = http.<span class="apidocCodeKeywordSpan">request</span>(options, function (res) {
+    return self.handleResponse(res);
+  });
+}
+else {
+  req = https.request(options, function (res) {
+    return self.handleResponse(res);
+  });
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailgun-js.attachment" id="apidoc.module.mailgun-js.attachment">module mailgun-js.attachment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.attachment.attachment" id="apidoc.element.mailgun-js.attachment.attachment">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>attachment
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Attachment(options) {
+  var data = options.data;
+
+  if (data) {
+    if (typeof data === &#x27;string&#x27; || Buffer.isBuffer(data) || isStream(data)) {
+      this.data = data;
+    }
+  }
+
+  this.filename = options.filename;
+  this.contentType = options.contentType;
+  this.knownLength = options.knownLength;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailgun-js.attachment.prototype" id="apidoc.module.mailgun-js.attachment.prototype">module mailgun-js.attachment.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.attachment.prototype.getType" id="apidoc.element.mailgun-js.attachment.prototype.getType">
+        function <span class="apidocSignatureSpan">mailgun-js.attachment.prototype.</span>getType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getType = function () {
+  if (this.data) {
+    if (typeof this.data === &#x27;string&#x27;) {
+      return &#x27;path&#x27;;
+    }
+    else if (Buffer.isBuffer(this.data)) {
+      return &#x27;buffer&#x27;;
+    }
+    else if (isStream(this.data)) {
+      return &#x27;stream&#x27;;
+    }
+  }
+
+  return &#x27;unknown&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+else if (typeof obj === &#x27;string&#x27;) {
+  debug(&#x27;appending stream to form data. key: %s obj: %s&#x27;, key, obj);
+  this.form.append(key, fs.createReadStream(obj));
+} else if ((typeof obj === &#x27;object&#x27;) &#x26;&#x26; (obj.readable === true)) {
+  debug(&#x27;appending readable stream to form data. key: %s obj: %s&#x27;, key, obj);
+  this.form.append(key, obj);
+} else if ((typeof obj === &#x27;object&#x27;) &#x26;&#x26; (obj instanceof Attachment)) {
+  var attachmentType = obj.<span class="apidocCodeKeywordSpan">getType</span>();
+  if (attachmentType === &#x27;path&#x27;) {
+    debug(&#x27;appending attachment stream to form data. key: %s data: %s filename: %s&#x27;, key, obj.data, obj.filename);
+    this.form.append(key, fs.createReadStream(obj.data), {
+      filename: obj.filename || &#x27;attached file&#x27;
+    });
+  }
+  else if (attachmentType === &#x27;buffer&#x27;) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailgun-js.request" id="apidoc.module.mailgun-js.request">module mailgun-js.request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.request" id="apidoc.element.mailgun-js.request.request">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>request
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Request(options) {
+  this.host = options.host;
+  this.protocol = options.protocol;
+  this.port = options.port;
+  this.endpoint = options.endpoint;
+  this.auth = options.auth;
+  this.proxy = options.proxy;
+  this.timeout = options.timeout;
+  this.retry = options.retry || 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return self.handleResponse(res);
+});
+  }
+  else {
+var req;
+
+if (options.protocol === &#x27;http:&#x27;) {
+  req = http.<span class="apidocCodeKeywordSpan">request</span>(options, function (res) {
+    return self.handleResponse(res);
+  });
+}
+else {
+  req = https.request(options, function (res) {
+    return self.handleResponse(res);
+  });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailgun-js.request.prototype" id="apidoc.module.mailgun-js.request.prototype">module mailgun-js.request.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype._request" id="apidoc.element.mailgun-js.request.prototype._request">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>_request
+        <span class="apidocSignatureSpan">(method, resource, data, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_request = function (method, resource, data, fn) {
+  var self = this;
+
+  var path = &#x27;&#x27;.concat(this.endpoint, resource);
+
+  var params = this.prepareData(data);
+
+  this.payload = &#x27;&#x27;;
+
+  var isMIME = path.indexOf(&#x27;/messages.mime&#x27;) &#x3e;= 0;
+
+  this.headers = {};
+  if (method === &#x27;GET&#x27; || method === &#x27;DELETE&#x27;) {
+    this.payload = qs.stringify(params);
+    if (this.payload) path = path.concat(&#x27;?&#x27;, this.payload);
+  }
+  else {
+    this.headers[&#x27;Content-Type&#x27;] = isMIME ? &#x27;multipart/form-data&#x27; : &#x27;application/x-www-form-urlencoded&#x27;;
+
+    if (params &#x26;&#x26; (params.attachment || params.inline || (isMIME &#x26;&#x26; params.message))) {
+      this.prepareFormData(params);
+    }
+    else {
+      this.payload = qs.stringify(params);
+      var length = this.payload ? Buffer.byteLength(this.payload) : 0;
+      this.headers[&#x27;Content-Length&#x27;] = length;
+    }
+  }
+
+  // check for MIME is true in case of messages GET
+  if (method === &#x27;GET&#x27; &#x26;&#x26;
+    path.indexOf(&#x27;/messages&#x27;) &#x3e;= 0 &#x26;&#x26;
+    params &#x26;&#x26; params.MIME === true) {
+    this.headers.Accept = &#x27;message/rfc2822&#x27;;
+  }
+
+  debug(&#x27;%s %s&#x27;, method, path);
+
+  var opts = {
+    hostname: this.host,
+    port: this.port,
+    protocol: this.protocol,
+    path: path,
+    method: method,
+    headers: this.headers,
+    auth: this.auth,
+    agent: this.proxy ? proxy(this.proxy, true) : false,
+    timeout: this.timeout
+  };
+
+  if (this.retry &#x3e; 1) {
+    retry(this.retry, function (retryCb) {
+      self.callback = retryCb;
+      self.performRequest(opts);
+    }, fn);
+  }
+  else {
+    this.callback = fn;
+    this.performRequest(opts);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.handleAttachmentObject" id="apidoc.element.mailgun-js.request.prototype.handleAttachmentObject">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>handleAttachmentObject
+        <span class="apidocSignatureSpan">(key, obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleAttachmentObject = function (key, obj) {
+  if (!this.form) this.form = new FormData();
+
+  if (Buffer.isBuffer(obj)) {
+    debug(&#x27;appending buffer to form data. key: %s&#x27;, key);
+    this.form.append(key, obj, {
+      filename: &#x27;file&#x27;
+    });
+  }
+  else if (typeof obj === &#x27;string&#x27;) {
+    debug(&#x27;appending stream to form data. key: %s obj: %s&#x27;, key, obj);
+    this.form.append(key, fs.createReadStream(obj));
+  } else if ((typeof obj === &#x27;object&#x27;) &#x26;&#x26; (obj.readable === true)) {
+    debug(&#x27;appending readable stream to form data. key: %s obj: %s&#x27;, key, obj);
+    this.form.append(key, obj);
+  } else if ((typeof obj === &#x27;object&#x27;) &#x26;&#x26; (obj instanceof Attachment)) {
+    var attachmentType = obj.getType();
+    if (attachmentType === &#x27;path&#x27;) {
+      debug(&#x27;appending attachment stream to form data. key: %s data: %s filename: %s&#x27;, key, obj.data, obj.filename);
+      this.form.append(key, fs.createReadStream(obj.data), {
+        filename: obj.filename || &#x27;attached file&#x27;
+      });
+    }
+    else if (attachmentType === &#x27;buffer&#x27;) {
+      debug(&#x27;appending attachment buffer to form data. key: %s filename: %s&#x27;, key, obj.filename);
+      var formOpts = {
+        filename: obj.filename || &#x27;attached file&#x27;
+      };
+
+      if (obj.contentType) {
+        formOpts.contentType = obj.contentType
+      }
+
+      if (obj.knownLength) {
+        formOpts.knownLength = obj.knownLength
+      }
+
+      this.form.append(key, obj.data, formOpts);
+    }
+    else if (attachmentType === &#x27;stream&#x27;) {
+      if (obj.knownLength &#x26;&#x26; obj.contentType) {
+        debug(&#x27;appending attachment stream to form data. key: %s filename: %s&#x27;, key, obj.filename);
+
+        this.form.append(key, obj.data, {
+          filename: obj.filename || &#x27;attached file&#x27;,
+          contentType: obj.contentType,
+          knownLength: obj.knownLength
+        });
+      }
+      else {
+        debug(&#x27;missing content type or length for attachment stream. key: %s&#x27;, key);
+      }
+    }
+  }
+  else {
+    debug(&#x27;unknown attachment type. key: %s&#x27;, key);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  for (var key in data) {
+var obj = data[key];
+if(isOk(obj)) {
+  if (key === &#x27;attachment&#x27; || key === &#x27;inline&#x27;) {
+    if (Array.isArray(obj)) {
+      for (var i = 0; i &#x3c; obj.length; i++) {
+        this.<span class="apidocCodeKeywordSpan">handleAttachmentObject</span>(key, obj[i]);
+      }
+    }
+    else {
+      this.handleAttachmentObject(key, obj);
+    }
+  }
+  else if (key === &#x27;message&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.handleMimeObject" id="apidoc.element.mailgun-js.request.prototype.handleMimeObject">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>handleMimeObject
+        <span class="apidocSignatureSpan">(key, obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleMimeObject = function (key, obj) {
+  var self = this;
+  if (typeof obj === &#x27;string&#x27;) {
+    if (fs.existsSync(obj) &#x26;&#x26; fs.statSync(obj).isFile()) {
+      self.form.append(&#x27;message&#x27;, fs.createReadStream(obj));
+    }
+    else {
+      self.form.append(&#x27;message&#x27;, new Buffer(obj), {
+        filename: &#x27;message.mime&#x27;,
+        contentType: &#x27;message/rfc822&#x27;,
+        knownLength: obj.length
+      });
+    }
+  }
+  else if (obj instanceof Readable) {
+    self.form.append(&#x27;message&#x27;, obj);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+  else {
+    this.handleAttachmentObject(key, obj);
+  }
+}
+else if (key === &#x27;message&#x27;) {
+  this.<span class="apidocCodeKeywordSpan">handleMimeObject</span>(key, obj);
+}
+else if (Array.isArray(obj)) {
+  function appendKey(element) {
+    if(isOk(element)) {
+      var value = getDataValue(key, element);
+      if(isOk(value)) {
+        self.form.append(key, value);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.handleResponse" id="apidoc.element.mailgun-js.request.prototype.handleResponse">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>handleResponse
+        <span class="apidocSignatureSpan">(res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleResponse = function (res) {
+  var self = this;
+  var chunks = &#x27;&#x27;;
+  var error;
+
+  res.on(&#x27;data&#x27;, function (chunk) {
+    chunks += chunk;
+  });
+
+  res.on(&#x27;error&#x27;, function (err) {
+    error = err;
+  });
+
+  res.on(&#x27;end&#x27;, function () {
+    var body;
+
+    debug(&#x27;response status code: %s content type: %s error: %s&#x27;, res.statusCode, res.headers[&#x27;content-type&#x27;], error);
+
+    // FIXME: An ugly hack to overcome invalid response type in mailgun api (see http://bit.ly/1eF30fU).
+    // We skip content-type validation for &#x27;campaings&#x27; endpoint assuming it is JSON.
+    var skipContentTypeCheck = res.req &#x26;&#x26; res.req.path &#x26;&#x26; res.req.path.match(/\/campaigns/);
+    var isJSON = res.headers[&#x27;content-type&#x27;] &#x26;&#x26; res.headers[&#x27;content-type&#x27;].indexOf(&#x27;application/json&#x27;) &#x3e;= 0;
+    if (chunks &#x26;&#x26; !error &#x26;&#x26; (skipContentTypeCheck || isJSON)) {
+      try {
+        body = JSON.parse(chunks);
+      } catch (e) {
+        error = e;
+      }
+    }
+
+    if (process.env.DEBUG_MAILGUN_FORCE_RETRY) {
+      error = new Error(&#x27;Force retry error&#x27;);
+      delete process.env.DEBUG_MAILGUN_FORCE_RETRY;
+    }
+
+    if (!error &#x26;&#x26; res.statusCode !== 200) {
+      var msg = body ? body.message || body.response : body || chunks || res.statusMessage;
+      error = new Error(msg);
+      error.statusCode = res.statusCode;
+    }
+
+    return self.callback(error, body);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.form &#x26;&#x26; (method === &#x27;POST&#x27; || method === &#x27;PUT&#x27; || method === &#x27;PATCH&#x27;)) {
+
+this.form.submit(options, function (err, res) {
+  if (err) {
+    return self.callback(err);
+  }
+
+  return self.<span class="apidocCodeKeywordSpan">handleResponse</span>(res);
+});
+  }
+  else {
+var req;
+
+if (options.protocol === &#x27;http:&#x27;) {
+  req = http.request(options, function (res) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.performRequest" id="apidoc.element.mailgun-js.request.prototype.performRequest">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>performRequest
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">performRequest = function (options) {
+  var self = this;
+  var method = options.method;
+
+  if (this.form &#x26;&#x26; (method === &#x27;POST&#x27; || method === &#x27;PUT&#x27; || method === &#x27;PATCH&#x27;)) {
+
+    this.form.submit(options, function (err, res) {
+      if (err) {
+        return self.callback(err);
+      }
+
+      return self.handleResponse(res);
+    });
+  }
+  else {
+    var req;
+
+    if (options.protocol === &#x27;http:&#x27;) {
+      req = http.request(options, function (res) {
+        return self.handleResponse(res);
+      });
+    }
+    else {
+      req = https.request(options, function (res) {
+        return self.handleResponse(res);
+      });
+    }
+
+    if (options.timeout) {
+      req.setTimeout(options.timeout, function () {
+        // timeout occurs
+        req.abort();
+      });
+    }
+
+    req.on(&#x27;error&#x27;, function (e) {
+      return self.callback(e);
+    });
+
+    if (this.payload &#x26;&#x26; (method === &#x27;POST&#x27; || method === &#x27;PUT&#x27; || method === &#x27;PATCH&#x27;)) {
+      req.write(this.payload);
+    }
+
+    req.end();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    agent: this.proxy ? proxy(this.proxy, true) : false,
+    timeout: this.timeout
+  };
+
+  if (this.retry &#x3e; 1) {
+    retry(this.retry, function (retryCb) {
+      self.callback = retryCb;
+      self.<span class="apidocCodeKeywordSpan">performRequest</span>(opts);
+    }, fn);
+  }
+  else {
+    this.callback = fn;
+    this.performRequest(opts);
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.prepareData" id="apidoc.element.mailgun-js.request.prototype.prepareData">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>prepareData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareData = function (data) {
+  var params = {};
+
+  for (var key in data) {
+    if (key !== &#x27;attachment&#x27; &#x26;&#x26; key !== &#x27;inline&#x27; &#x26;&#x26; isOk(data[key])) {
+      var value = getDataValue(key, data[key]);
+      if(isOk(value)) {
+        params[key] = value;
+      }
+    }
+    else {
+      params[key] = data[key];
+    }
+  }
+
+  return params;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+Request.prototype._request = function (method, resource, data, fn) {
+var self = this;
+
+var path = &#x27;&#x27;.concat(this.endpoint, resource);
+
+var params = this.<span class="apidocCodeKeywordSpan">prepareData</span>(data);
+
+this.payload = &#x27;&#x27;;
+
+var isMIME = path.indexOf(&#x27;/messages.mime&#x27;) &#x3e;= 0;
+
+this.headers = {};
+if (method === &#x27;GET&#x27; || method === &#x27;DELETE&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.prepareFormData" id="apidoc.element.mailgun-js.request.prototype.prepareFormData">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>prepareFormData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareFormData = function (data) {
+  this.form = new FormData();
+  var self = this;
+
+  for (var key in data) {
+    var obj = data[key];
+    if(isOk(obj)) {
+      if (key === &#x27;attachment&#x27; || key === &#x27;inline&#x27;) {
+        if (Array.isArray(obj)) {
+          for (var i = 0; i &#x3c; obj.length; i++) {
+            this.handleAttachmentObject(key, obj[i]);
+          }
+        }
+        else {
+          this.handleAttachmentObject(key, obj);
+        }
+      }
+      else if (key === &#x27;message&#x27;) {
+        this.handleMimeObject(key, obj);
+      }
+      else if (Array.isArray(obj)) {
+        function appendKey(element) {
+          if(isOk(element)) {
+            var value = getDataValue(key, element);
+            if(isOk(value)) {
+              self.form.append(key, value);
+            }
+          }
+        }
+
+        obj.forEach(appendKey);
+      }
+      else {
+        var value = getDataValue(key, obj);
+        if(isOk(value)) {
+          this.form.append(key, value);
+        }
+      }
+    }
+  }
+
+  this.headers = this.form.getHeaders();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.payload = qs.stringify(params);
+  if (this.payload) path = path.concat(&#x27;?&#x27;, this.payload);
+}
+else {
+  this.headers[&#x27;Content-Type&#x27;] = isMIME ? &#x27;multipart/form-data&#x27; : &#x27;application/x-www-form-urlencoded&#x27
+;;
+
+  if (params &#x26;&#x26; (params.attachment || params.inline || (isMIME &#x26;&#x26; params.message))) {
+    this.<span class="apidocCodeKeywordSpan">prepareFormData</span>(params);
+  }
+  else {
+    this.payload = qs.stringify(params);
+    var length = this.payload ? Buffer.byteLength(this.payload) : 0;
+    this.headers[&#x27;Content-Length&#x27;] = length;
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.request.prototype.request" id="apidoc.element.mailgun-js.request.prototype.request">
+        function <span class="apidocSignatureSpan">mailgun-js.request.prototype.</span>request
+        <span class="apidocSignatureSpan">(method, resource, data, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (method, resource, data, fn) {
+  if (typeof data === &#x27;function&#x27; &#x26;&#x26; !fn) {
+    fn = data;
+    data = {};
+  }
+
+  if (!data) {
+    data = {}
+  }
+
+  return promisifyCall(this, this._request, method, resource, data, fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return self.handleResponse(res);
+});
+  }
+  else {
+var req;
+
+if (options.protocol === &#x27;http:&#x27;) {
+  req = http.<span class="apidocCodeKeywordSpan">request</span>(options, function (res) {
+    return self.handleResponse(res);
+  });
+}
+else {
+  req = https.request(options, function (res) {
+    return self.handleResponse(res);
+  });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
