@@ -47,12 +47,21 @@
 }
 </style>
 <h1>api documentation for
-    <a href="https://github.com/bojand/mailgun-js">mailgun-js (v0.9.1)</a>
+    <a href="https://github.com/bojand/mailgun-js">mailgun-js (v0.10.1)</a>
 </h1>
 <h4>Simple Node.js helper module for Mailgun API</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js">module mailgun-js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.mailgun-js">
+            function <span class="apidocSignatureSpan"></span>mailgun-js
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
 
         <li>
 
@@ -65,9 +74,27 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.mailgun">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>mailgun
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request">
             function <span class="apidocSignatureSpan">mailgun-js.</span>request
             <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.toString">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>toString
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -201,10 +228,38 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js.toString">module mailgun-js.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.toString.toString">
+            function <span class="apidocSignatureSpan">mailgun-js.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.mailgun-js" id="apidoc.module.mailgun-js">module mailgun-js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.mailgun-js" id="apidoc.element.mailgun-js.mailgun-js">
+        function <span class="apidocSignatureSpan"></span>mailgun-js
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mailgun-js = function (options) {
+  return new Mailgun(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -226,6 +281,21 @@
   this.filename = options.filename;
   this.contentType = options.contentType;
   this.knownLength = options.knownLength;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.mailgun" id="apidoc.element.mailgun-js.mailgun">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>mailgun
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mailgun = function (options) {
+  return new Mailgun(options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -265,6 +335,37 @@ else {
   req = https.request(options, function (res) {
     return self.handleResponse(res);
   });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.toString" id="apidoc.element.mailgun-js.toString">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  html: '&lt;b&gt; Test email text &lt;/b&gt;'
+});
+
+mail.build(function(mailBuildError, message) {
+
+var dataToSend = {
+    to: 'mm@samples.mailgun.org',
+    message: message.<span class="apidocCodeKeywordSpan">toString</span>('ascii')
+};
+
+mailgun.messages().sendMime(dataToSend, function (sendError, body) {
+    if (sendError) {
+        console.log(sendError);
+        return;
+    }
 ...</pre></li>
     </ul>
 
@@ -903,6 +1004,40 @@ else {
   req = https.request(options, function (res) {
     return self.handleResponse(res);
   });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailgun-js.toString" id="apidoc.module.mailgun-js.toString">module mailgun-js.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailgun-js.toString.toString" id="apidoc.element.mailgun-js.toString.toString">
+        function <span class="apidocSignatureSpan">mailgun-js.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  html: '&lt;b&gt; Test email text &lt;/b&gt;'
+});
+
+mail.build(function(mailBuildError, message) {
+
+var dataToSend = {
+    to: 'mm@samples.mailgun.org',
+    message: message.<span class="apidocCodeKeywordSpan">toString</span>('ascii')
+};
+
+mailgun.messages().sendMime(dataToSend, function (sendError, body) {
+    if (sendError) {
+        console.log(sendError);
+        return;
+    }
 ...</pre></li>
     </ul>
 
