@@ -1,4 +1,7 @@
-# api documentation for  [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js)  [![npm package](https://img.shields.io/npm/v/npmdoc-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mailgun-js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mailgun-js)
+# npmdoc-mailgun-js
+
+#### api documentation for  [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js)  [![npm package](https://img.shields.io/npm/v/npmdoc-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mailgun-js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mailgun-js)
+
 #### Simple Node.js helper module for Mailgun API
 
 [![NPM](https://nodei.co/npm/mailgun-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mailgun-js)
