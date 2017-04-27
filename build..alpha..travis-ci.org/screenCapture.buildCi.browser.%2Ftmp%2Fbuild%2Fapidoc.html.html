@@ -74,27 +74,9 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.mailgun">
-            function <span class="apidocSignatureSpan">mailgun-js.</span>mailgun
-            <span class="apidocSignatureSpan">(options)</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.request">
             function <span class="apidocSignatureSpan">mailgun-js.</span>request
             <span class="apidocSignatureSpan">(options)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.toString">
-            function <span class="apidocSignatureSpan">mailgun-js.</span>toString
-            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -228,19 +210,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.mailgun-js.toString">module mailgun-js.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mailgun-js.toString.toString">
-            function <span class="apidocSignatureSpan">mailgun-js.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -288,21 +257,6 @@
 
 
     <h2>
-        <a href="#apidoc.element.mailgun-js.mailgun" id="apidoc.element.mailgun-js.mailgun">
-        function <span class="apidocSignatureSpan">mailgun-js.</span>mailgun
-        <span class="apidocSignatureSpan">(options)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">mailgun = function (options) {
-  return new Mailgun(options);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.mailgun-js.request" id="apidoc.element.mailgun-js.request">
         function <span class="apidocSignatureSpan">mailgun-js.</span>request
         <span class="apidocSignatureSpan">(options)</span>
@@ -320,52 +274,20 @@
   this.retry = options.retry || 1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  return self.handleResponse(res);
-});
-  }
-  else {
-var req;
-
-if (options.protocol === 'http:') {
-  req = http.<span class="apidocCodeKeywordSpan">request</span>(options, function (res) {
-    return self.handleResponse(res);
-  });
-}
-else {
-  req = https.request(options, function (res) {
-    return self.handleResponse(res);
-  });
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.mailgun-js.toString" id="apidoc.element.mailgun-js.toString">
-        function <span class="apidocSignatureSpan">mailgun-js.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  html: '&lt;b&gt; Test email text &lt;/b&gt;'
-});
-
-mail.build(function(mailBuildError, message) {
-
-var dataToSend = {
-    to: 'mm@samples.mailgun.org',
-    message: message.<span class="apidocCodeKeywordSpan">toString</span>('ascii')
-};
-
-mailgun.messages().sendMime(dataToSend, function (sendError, body) {
-    if (sendError) {
-        console.log(sendError);
-        return;
     }
+
+    if (err) {
+      return fn(err);
+    }
+
+    this.client = this.base;
+    return this.client.<span class="apidocCodeKeywordSpan">request</span>(action.method, requestPath, data, fn);
+  }
+
+  constructor.prototype[getName(actionName)] = function (data, fn) {
+    return promisifyCall(this, impl, data, fn);
+  };
+};
 ...</pre></li>
     </ul>
 
@@ -476,21 +398,20 @@ else if (typeof obj === 'string') {
   this.retry = options.retry || 1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  return self.handleResponse(res);
-});
-  }
-  else {
-var req;
+    }
 
-if (options.protocol === 'http:') {
-  req = http.<span class="apidocCodeKeywordSpan">request</span>(options, function (res) {
-    return self.handleResponse(res);
-  });
-}
-else {
-  req = https.request(options, function (res) {
-    return self.handleResponse(res);
-  });
+    if (err) {
+      return fn(err);
+    }
+
+    this.client = this.base;
+    return this.client.<span class="apidocCodeKeywordSpan">request</span>(action.method, requestPath, data, fn);
+  }
+
+  constructor.prototype[getName(actionName)] = function (data, fn) {
+    return promisifyCall(this, impl, data, fn);
+  };
+};
 ...</pre></li>
     </ul>
 
@@ -989,55 +910,20 @@ else {
   return promisifyCall(this, this._request, method, resource, data, fn);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  return self.handleResponse(res);
-});
-  }
-  else {
-var req;
-
-if (options.protocol === 'http:') {
-  req = http.<span class="apidocCodeKeywordSpan">request</span>(options, function (res) {
-    return self.handleResponse(res);
-  });
-}
-else {
-  req = https.request(options, function (res) {
-    return self.handleResponse(res);
-  });
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.mailgun-js.toString" id="apidoc.module.mailgun-js.toString">module mailgun-js.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.mailgun-js.toString.toString" id="apidoc.element.mailgun-js.toString.toString">
-        function <span class="apidocSignatureSpan">mailgun-js.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  html: '&lt;b&gt; Test email text &lt;/b&gt;'
-});
-
-mail.build(function(mailBuildError, message) {
-
-var dataToSend = {
-    to: 'mm@samples.mailgun.org',
-    message: message.<span class="apidocCodeKeywordSpan">toString</span>('ascii')
-};
-
-mailgun.messages().sendMime(dataToSend, function (sendError, body) {
-    if (sendError) {
-        console.log(sendError);
-        return;
     }
+
+    if (err) {
+      return fn(err);
+    }
+
+    this.client = this.base;
+    return this.client.<span class="apidocCodeKeywordSpan">request</span>(action.method, requestPath, data, fn);
+  }
+
+  constructor.prototype[getName(actionName)] = function (data, fn) {
+    return promisifyCall(this, impl, data, fn);
+  };
+};
 ...</pre></li>
     </ul>
 
